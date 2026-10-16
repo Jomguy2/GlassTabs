@@ -12,7 +12,9 @@
       "versionDescription": "First beta: Timer with presets, sounds and vibration; Stopwatch with laps and splits; on-device Notes. Please report anything broken.",
       "downloadURL": "https://github.com/Jomguy2/GlassTabs/releases/download/v0.9.0/GlassTabs.ipa",
       "localizedDescription": "Timer, Stopwatch and private on-device Notes with a Liquid Glass interface. No account, no cloud, works fully offline.",
-      "tintColor": "1ED760"
+      "tintColor": "1ED760",
+      "iconURL": "https://raw.githubusercontent.com/Jomguy2/GlassTabs/main/AppIcon.png",
+      "size": 641448
     }
   ]
 }
