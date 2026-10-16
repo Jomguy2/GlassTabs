@@ -7,7 +7,7 @@ Native iOS app: Timer, Stopwatch, and on-device Notes under one Liquid Glass roo
 Add this source in SideStore (Sources → Add Source, paste URL):
 
 ```
-https://raw.githubusercontent.com/<user>/GlassTabs/main/Glasstabs.json
+https://raw.githubusercontent.com/Jomguy2/GlassTabs/main/GlassTabs.json
 ```
 
 Then install GlassTabs from the source. Updates appear in SideStore automatically.

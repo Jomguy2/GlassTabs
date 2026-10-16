@@ -1,0 +1,18 @@
+{
+  "name": "GlassTabs",
+  "identifier": "com.jomg.glasstabs.source",
+  "sourceURL": "https://raw.githubusercontent.com/Jomguy2/GlassTabs/main/GlassTabs.json",
+  "apps": [
+    {
+      "name": "GlassTabs",
+      "bundleIdentifier": "com.jomg.glasstabs",
+      "developerName": "Jomguy2",
+      "version": "0.9.0",
+      "versionDate": "2026-10-16T09:38:31Z",
+      "versionDescription": "First beta: Timer with presets, sounds and vibration; Stopwatch with laps and splits; on-device Notes. Please report anything broken.",
+      "downloadURL": "https://github.com/Jomguy2/GlassTabs/releases/download/v0.9.0/GlassTabs.ipa",
+      "localizedDescription": "Timer, Stopwatch and private on-device Notes with a Liquid Glass interface. No account, no cloud, works fully offline.",
+      "tintColor": "1ED760"
+    }
+  ]
+}
