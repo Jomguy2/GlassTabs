@@ -40,14 +40,34 @@ struct TimerView: View {
         return pausedRemaining
     }
 
+    private var progress: Double {
+        guard totalSeconds > 0 else { return 0 }
+        return min(1, max(0, Double(remaining) / Double(totalSeconds)))
+    }
+
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                Text(format(remaining))
-                    .bigDigits(72)
-                    .padding(.top, 24)
+                ZStack {
+                    Circle()
+                        .stroke(.white.opacity(0.18), lineWidth: 12)
+                        .frame(width: 250, height: 250)
+                    Circle()
+                        .trim(from: 0, to: progress)
+                        .stroke(Color.glassGreen, style: StrokeStyle(lineWidth: 12, lineCap: .round))
+                        .frame(width: 250, height: 250)
+                        .rotationEffect(.degrees(-90))
+                        .animation(.linear(duration: 0.25), value: remaining)
+                    Text(format(remaining))
+                        .bigDigits(60)
+                }
+                .padding(.top, 24)
 
                 // Preset chips
+                Text("LENGTH")
+                    .sectionLabel()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 28)
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 5), spacing: 10) {
                     ForEach(Self.presets, id: \.self) { minutes in
                         Button("\(minutes)") {
@@ -77,6 +97,10 @@ struct TimerView: View {
                 .padding(.horizontal)
 
                 // Sound + vibration
+                Text("FINISH ALERT")
+                    .sectionLabel()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 28)
                 VStack(spacing: 12) {
                     Picker("Sound", selection: $sound) {
                         ForEach(Self.sounds) { Text($0.name).tag($0) }

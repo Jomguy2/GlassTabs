@@ -112,4 +112,11 @@ extension View {
             .frame(maxWidth: .infinity, minHeight: 48)
             .background(selected ? .white : .white.opacity(0.16), in: RoundedRectangle(cornerRadius: 16))
     }
+
+    /// Small caps section header for grouping controls.
+    func sectionLabel() -> some View {
+        self.font(.caption.bold())
+            .tracking(1.5)
+            .foregroundStyle(.white.opacity(0.6))
+    }
 }

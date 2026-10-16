@@ -11,7 +11,7 @@ struct StopwatchView: View {
     @State private var laps: [TimeInterval] = []
     @State private var now = Date()
 
-    private let ticker = Timer.publish(every: 0.05, on: .main, in: .common).autoconnect()
+    private let ticker = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
 
     private var elapsed: TimeInterval {
         if isRunning, let startDate {
@@ -106,7 +106,7 @@ struct StopwatchView: View {
         let total = max(0, interval)
         let minutes = Int(total / 60)
         let seconds = Int(total.truncatingRemainder(dividingBy: 60))
-        let tenths = Int((total * 10).truncatingRemainder(dividingBy: 10))
-        return String(format: "%02d:%02d.%d", minutes, seconds, tenths)
+        let hundredths = Int((total * 100).truncatingRemainder(dividingBy: 100))
+        return String(format: "%02d:%02d.%02d", minutes, seconds, hundredths)
     }
 }
