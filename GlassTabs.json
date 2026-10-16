@@ -7,14 +7,14 @@
       "name": "GlassTabs",
       "bundleIdentifier": "com.jomg.glasstabs",
       "developerName": "Jomguy2",
-      "version": "0.9.1",
-      "versionDate": "2026-10-16T10:24:24Z",
-      "versionDescription": "Contrast UI pass: forced dark mode, green primary buttons, readable chips and tab bar.",
-      "downloadURL": "https://github.com/Jomguy2/GlassTabs/releases/download/v0.9.1/GlassTabs.ipa",
+      "version": "0.9.2",
+      "versionDate": "2026-10-16T10:34:06Z",
+      "versionDescription": "Hundredths stopwatch, timer progress ring, section labels.",
+      "downloadURL": "https://github.com/Jomguy2/GlassTabs/releases/download/v0.9.2/GlassTabs.ipa",
       "localizedDescription": "Timer, Stopwatch and private on-device Notes with a Liquid Glass interface. No account, no cloud, works fully offline.",
       "tintColor": "1ED760",
       "iconURL": "https://raw.githubusercontent.com/Jomguy2/GlassTabs/main/AppIcon.png",
-      "size": 639288
+      "size": 667744
     }
   ]
 }
