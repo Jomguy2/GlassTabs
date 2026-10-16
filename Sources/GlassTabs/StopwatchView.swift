@@ -29,21 +29,18 @@ struct StopwatchView: View {
             HStack(spacing: 16) {
                 if isRunning {
                     Button("Stop", action: stop)
-                        .buttonStyle(.borderedProminent)
+                        .buttonStyle(PrimaryButtonStyle())
                     Button("Lap", action: lap)
-                        .buttonStyle(.bordered)
-                        .tint(.white)
+                        .buttonStyle(SecondaryButtonStyle())
                 } else {
                     Button(elapsed > 0 ? "Resume" : "Start", action: start)
-                        .buttonStyle(.borderedProminent)
+                        .buttonStyle(PrimaryButtonStyle())
                     if elapsed > 0 || !laps.isEmpty {
                         Button("Reset", action: reset)
-                            .buttonStyle(.bordered)
-                            .tint(.white)
+                            .buttonStyle(SecondaryButtonStyle())
                     }
                 }
             }
-            .font(.title3.bold())
 
             if laps.isEmpty {
                 Text("No laps yet")

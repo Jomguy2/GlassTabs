@@ -53,16 +53,7 @@ struct TimerView: View {
                         Button("\(minutes)") {
                             select(minutes * 60)
                         }
-                        .font(.headline)
-                        .foregroundStyle(.white)
-                        .frame(maxWidth: .infinity, minHeight: 44)
-                        .liquidGlassCard(cornerRadius: 14)
-                        .overlay {
-                            if totalSeconds == minutes * 60 && !isRunning {
-                                RoundedRectangle(cornerRadius: 14)
-                                    .stroke(.white, lineWidth: 2)
-                            }
-                        }
+                        .presetChip(selected: totalSeconds == minutes * 60 && !isRunning)
                     }
                 }
                 .padding(.horizontal)
@@ -95,7 +86,8 @@ struct TimerView: View {
                         .foregroundStyle(.white)
                         .tint(.green)
                     Button("Preview sound") { playFinishFeedback() }
-                        .foregroundStyle(.white.opacity(0.9))
+                        .font(.headline)
+                        .foregroundStyle(Color.glassGreen)
                 }
                 .padding()
                 .liquidGlassCard()
@@ -105,21 +97,18 @@ struct TimerView: View {
                 HStack(spacing: 16) {
                     if isRunning {
                         Button("Pause", action: pause)
-                            .buttonStyle(.borderedProminent)
+                            .buttonStyle(PrimaryButtonStyle())
                         Button("Reset", action: reset)
-                            .buttonStyle(.bordered)
-                            .tint(.white)
+                            .buttonStyle(SecondaryButtonStyle())
                     } else {
                         Button(remaining < totalSeconds && remaining > 0 ? "Resume" : "Start", action: start)
-                            .buttonStyle(.borderedProminent)
+                            .buttonStyle(PrimaryButtonStyle())
                         if remaining != totalSeconds {
                             Button("Reset", action: reset)
-                                .buttonStyle(.bordered)
-                                .tint(.white)
+                                .buttonStyle(SecondaryButtonStyle())
                         }
                     }
                 }
-                .font(.title3.bold())
                 .padding(.bottom, 24)
             }
         }

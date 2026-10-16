@@ -11,6 +11,7 @@ struct ContentView: View {
                 .tabItem { Label("Notes", systemImage: "note.text") }
         }
         .tint(.white)
+        .preferredColorScheme(.dark)
         .toolbarBackground(.ultraThinMaterial, for: .tabBar)
         .toolbarBackground(.visible, for: .tabBar)
     }
